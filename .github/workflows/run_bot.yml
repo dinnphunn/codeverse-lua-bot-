@@ -10,18 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone repository
-      uses: actions/checkout@v3
+      - name: Clone repository
+        uses: actions/checkout@v3
 
-    - name: Setup Luvit / Lua Environment
-      uses: luvit/action-setup@v1
+      - name: Setup Luvit / Lua Environment
+        uses: luvit/action-setup@v1
 
-    - name: Install Dependencies
-      run: |
-        lit install discordia
+      - name: Install Dependencies
+        run: |
+          lit install discordia
 
-    - name: Run Bot
-      env:
-        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-      run: |
-        luvit bot.lua
+      - name: Run Bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: |
+          luvit bot.lua
