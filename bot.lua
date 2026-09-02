@@ -93,3 +93,4 @@ client:on('messageCreate', function(message)
 end)
 
 client:run('Bot ' .. os.getenv('BOT_TOKEN'))
+
