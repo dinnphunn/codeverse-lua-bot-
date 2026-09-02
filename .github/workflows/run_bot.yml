@@ -15,12 +15,11 @@ jobs:
 
       - name: Install Luvit and Lit
         run: |
-          # Chạy script cài đặt chính thức của Luvit
-          curl -L https://github.com/luvit/luvit/raw/master/tools/install.sh | bash
+          curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
+          ./lit install luvit
 
       - name: Install Dependencies
         run: |
-          # Script trên sẽ tự tải lit, luvi và luvit vào thư mục hiện tại
           ./lit install discordia
 
       - name: Run Bot
