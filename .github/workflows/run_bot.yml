@@ -15,7 +15,7 @@ jobs:
 
       - name: Setup Luvit and Lit
         run: |
-          curl https://lit.luvit.io/install.sh | sh
+          curl -s https://lit.luvit.io/install.sh | bash
           echo "$HOME/.luvit/bin" >> $GITHUB_PATH
 
       - name: Install Dependencies
