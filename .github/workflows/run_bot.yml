@@ -13,17 +13,17 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Setup Luvit and Lit
+      - name: Install Luvit and Lit Manually
         run: |
-          curl -s https://lit.luvit.io/install.sh | bash
-          echo "$HOME/.luvit/bin" >> $GITHUB_PATH
+          curl -L https://github.com/luvit/luvit/raw/master/get.sh | sh
+          echo "$PWD" >> $GITHUB_PATH
 
       - name: Install Dependencies
         run: |
-          lit install discordia
+          ./lit install discordia
 
       - name: Run Bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
-          luvit bot.lua
+          ./luvit bot.lua
