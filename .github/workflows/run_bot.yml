@@ -26,3 +26,4 @@ jobs:
       run: |
         luvit bot.lua
 
+.
