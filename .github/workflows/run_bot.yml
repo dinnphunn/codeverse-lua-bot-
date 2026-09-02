@@ -13,17 +13,14 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Download Luvit Directly
+      - name: Install Luvit and Lit
         run: |
-          curl -LO https://github.com/luvit/luvit/releases/latest/download/luvit-linux-amd64
-          mv luvit-linux-amd64 luvit
-          chmod +x luvit
-          curl -LO https://github.com/luvit/lit/releases/latest/download/lit-linux-amd64
-          mv lit-linux-amd64 lit
-          chmod +x lit
+          # Chạy script cài đặt chính thức của Luvit
+          curl -L https://github.com/luvit/luvit/raw/master/tools/install.sh | bash
 
       - name: Install Dependencies
         run: |
+          # Script trên sẽ tự tải lit, luvi và luvit vào thư mục hiện tại
           ./lit install discordia
 
       - name: Run Bot
