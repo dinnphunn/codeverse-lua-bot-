@@ -13,8 +13,10 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Setup Luvit / Lua Environment
-        uses: luvit/action-setup@v1
+      - name: Setup Luvit and Lit
+        run: |
+          curl https://lit.luvit.io/install.sh | sh
+          echo "$HOME/.luvit/bin" >> $GITHUB_PATH
 
       - name: Install Dependencies
         run: |
