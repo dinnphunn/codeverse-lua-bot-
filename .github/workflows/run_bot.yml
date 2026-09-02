@@ -16,11 +16,11 @@ jobs:
       - name: Install Luvit and Lit
         run: |
           curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh
-          ./lit install luvit
+          ./lit install luvit/luvit
 
       - name: Install Dependencies
         run: |
-          ./lit install discordia
+          ./lit install SinisterRectus/discordia
 
       - name: Run Bot
         env:
